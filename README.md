@@ -6,9 +6,7 @@ Takes no action if no packages are specified.
 
 # Compatibility #
 
-This module has been tested on the following systems.
-
- * Systems with package repositories
+Systems with package repositories
 
 # Parameters #
 
