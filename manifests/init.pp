@@ -1,8 +1,17 @@
-# == Class: utils
+# ## Class: utils ##
 #
-# Ability to specify arbitrary list of utilities.
+# This module manages arbitrary installations of utilities.
 #
-# Takes no action if included and no packages are specified.
+# Takes no action if no packages are specified.
+#
+# ### Parameters ###
+#
+# packages
+# --------
+#
+# Array of packages to install.
+#
+# - *Default*: 'UNSET'
 #
 class utils (
   $packages = 'UNSET',
