@@ -1,14 +1,20 @@
-# puppet-module-utils #
+# puppet-module-utils
 
 This module manages arbitrary installation of utilities.
 
 Takes no action if no packages are specified.
 
-# Compatibility #
+[![Build Status](https://travis-ci.org/ghoneycutt/puppet-module-utils.png?branch=master)](https://travis-ci.org/ghoneycutt/puppet-module-utils)
 
-Systems with package repositories
+===
 
-# Parameters #
+# Compatibility
+
+Systems with package repositories that only need the name of the packages passed to the package resource.
+
+===
+
+# Parameters
 
 packages
 --------
