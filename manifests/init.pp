@@ -6,10 +6,16 @@
 #
 class utils (
   $packages = 'UNSET',
+  $packages_enable_hiera_array = undef,
 ) {
 
   if $packages != 'UNSET' {
-    package { $packages:
+    if $packages_enable_hiera_array != undef {
+      $packages_real = hiera_array('utils::packages')
+    } else {
+      $packages_real = $packages
+    }
+    package { $packages_real:
       ensure => present,
     }
   }
