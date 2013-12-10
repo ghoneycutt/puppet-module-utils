@@ -22,8 +22,8 @@ Array of packages to install.
 
 - *Default*: 'UNSET'
 
-packages_enable_hiera_array
----------------------------
-Enable the use hiera_array to lookup variable packages
+enable_hiera_array
+------------------
+Boolean to enable the use hiera_array to lookup variable packages
 
-- *Default*: undef
+- *Default*: false
