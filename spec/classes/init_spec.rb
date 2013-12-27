@@ -51,7 +51,7 @@ describe 'utils' do
 
     it 'should fail' do
       expect {
-        should include_class('types')
+        should contain_class('types')
       }.to raise_error(Puppet::Error)
     end
   end
