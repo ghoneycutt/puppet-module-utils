@@ -5,6 +5,7 @@
 # Takes no action if no packages are specified.
 #
 class utils (
+  $provider           = undef,
   $packages           = 'UNSET',
   $enable_hiera_array = false,
 ) {
@@ -20,6 +21,14 @@ class utils (
     }
     default: {
       fail("utils::enable_hiera_array must be of type boolean or string. Detected type is <${enable_hiera_array_type}>.")
+    }
+  }
+
+  if $provider {
+    validate_string($provider)
+
+    Package {
+      provider => $provider,
     }
   }
 

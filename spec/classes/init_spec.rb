@@ -1,7 +1,17 @@
 require 'spec_helper'
+
 describe 'utils' do
 
   it { should compile.with_all_deps }
+
+  describe 'with parameter provider set as a string' do
+    let :params do
+      { :provider => 'yum',
+        :packages => 'valid_package' }
+    end
+
+    it { should contain_package('valid_package').with_provider('yum') }
+  end
 
   describe 'with parameter packages set to UNSET as a string' do
     let :params do
