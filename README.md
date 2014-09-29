@@ -16,6 +16,12 @@ Systems with package repositories that only need the name of the packages passed
 
 # Parameters
 
+provider
+--------
+Set provider to use.
+
+- *Default*: 'UNSET'
+
 packages
 --------
 Array of packages to install.
