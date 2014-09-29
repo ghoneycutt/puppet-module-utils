@@ -6,6 +6,7 @@
 #
 class utils (
   $packages           = 'UNSET',
+  $provider           = undef,
   $enable_hiera_array = false,
 ) {
 
@@ -23,6 +24,10 @@ class utils (
     }
   }
 
+  if $provider != undef {
+    validate_string($provider)
+  }
+
   if $packages != 'UNSET' {
     if $enable_hiera_array_real == true {
       $packages_real = hiera_array('utils::packages')
@@ -33,7 +38,8 @@ class utils (
 
   if $packages_real {
     package { $packages_real:
-      ensure => present,
+      ensure   => present,
+      provider => $provider,
     }
   }
 }
