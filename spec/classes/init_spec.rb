@@ -12,6 +12,44 @@ describe 'utils' do
     it { should have_resource_count(0) }
   end
 
+  describe 'with parameter provider' do
+    context 'set to a valid string' do
+      let :params do
+        { :packages => ['rake','rspec'],
+          :provider => 'gem',
+        }
+      end
+
+      it {
+        should contain_package('rake').with({
+          'ensure'   => 'present',
+          'provider' => 'gem',
+        })
+      }
+
+      it {
+        should contain_package('rspec').with({
+          'ensure'   => 'present',
+          'provider' => 'gem',
+        })
+      }
+    end
+
+    context 'set to an invalid type (non-string)' do
+      let :params do
+        { :packages => ['rake','rspec'],
+          :provider => true,
+        }
+      end
+
+      it 'should fail' do
+        expect {
+          should contain_class('utils')
+        }.to raise_error(Puppet::Error)
+      end
+    end
+  end
+
   describe 'with parameter packages set as a string' do
     let :params do
       { :packages => 'valid_package' }
@@ -51,7 +89,7 @@ describe 'utils' do
 
     it 'should fail' do
       expect {
-        should contain_class('types')
+        should contain_class('utils')
       }.to raise_error(Puppet::Error)
     end
   end
