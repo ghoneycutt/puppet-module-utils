@@ -10,18 +10,12 @@ class utils (
   $enable_hiera_array = false,
 ) {
 
-  $enable_hiera_array_type = type($enable_hiera_array)
-
-  case $enable_hiera_array_type {
-    'string': {
-      $enable_hiera_array_real = str2bool($enable_hiera_array)
-    }
-    'boolean': {
-      $enable_hiera_array_real = $enable_hiera_array
-    }
-    default: {
-      fail("utils::enable_hiera_array must be of type boolean or string. Detected type is <${enable_hiera_array_type}>.")
-    }
+  if is_string($enable_hiera_array) {
+    $enable_hiera_array_real = str2bool($enable_hiera_array)
+  } elsif is_bool($enable_hiera_array) {
+    $enable_hiera_array_real = $enable_hiera_array
+  } else {
+    fail('utils::enable_hiera_array must be of type boolean or string.')
   }
 
   if $provider != undef {
