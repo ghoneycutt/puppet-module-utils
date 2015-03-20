@@ -7,4 +7,4 @@ summary 'Manage utils'
 description 'Ensure arbitrary list of utility packages is present'
 project_page 'https://github.com/ghoneycutt/puppet-module-utils'
 
-dependency 'puppetlabs/stdlib', '>= 3.2.0'
+dependency 'puppetlabs/stdlib', '>= 3.2.0 < 5.0.0'
