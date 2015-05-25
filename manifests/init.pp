@@ -10,7 +10,7 @@ class utils (
   $enable_hiera_array = false,
 ) {
 
-  $enable_hiera_array_type = type($enable_hiera_array)
+  $enable_hiera_array_type = type3x($enable_hiera_array)
 
   case $enable_hiera_array_type {
     'string': {
