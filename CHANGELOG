@@ -1,2 +1,6 @@
+2.3.0 - 2015-05-25
+  * Support Puppet v4 and v3 with future parser
+  * Support Ruby 2.1.0
+
 2.0.0 - 2013-05-17 Garrett Honeycutt <code@garretthoneycutt.com>
-* Rebirth - now supports arbitrary list of utilities
+  * Rebirth - now supports arbitrary list of utilities
