@@ -34,9 +34,7 @@ class utils (
     } else {
       $packages_real = $packages
     }
-  }
 
-  if $packages_real {
     package { $packages_real:
       ensure   => present,
       provider => $provider,
