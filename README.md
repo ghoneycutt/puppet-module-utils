@@ -10,7 +10,10 @@ Takes no action if no packages are specified.
 
 # Compatibility
 
-Systems with package repositories that only need the name of the packages passed to the package resource. Meant to work with Puppet v3 with and without the future parser and Puppet v4 with Ruby versions 1.8.7, 1.9.3, 2.0.0 and 2.1.0.
+Systems with package repositories that only need the name of the
+packages passed to the package resource. Meant to work with Puppet v3
+with and without the future parser and Puppet v4 with Ruby versions
+1.8.7, 1.9.3, 2.0.0, 2.1.0 and 2.3.1.
 
 ===
 
